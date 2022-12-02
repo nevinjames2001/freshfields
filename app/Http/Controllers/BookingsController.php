@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Bookings;
 use App\Models\User;
 use App\Models\PlantsGallery;
+use App\Models\Veterinarian;
 use DateTime;
 use DateInterval;
 
