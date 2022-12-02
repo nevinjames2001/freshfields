@@ -35,7 +35,7 @@
             $veterinarian=$_GET['veterinarian'];
         }
         else{
-            $veterinarian=0;
+            $veterinarian=1;
         }
         // $month=now()->month;
         // $month=now()->month;
@@ -132,7 +132,20 @@
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
+                        $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
+                        $totalbookings=count($totalbookings);
+                        // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
 
+                        if($totalbookings==8){
+                            echo "<td class='$today'><h4>$currentDay</h4><a href='#' class='btn btn-danger btn-xs'>All Booked</a>";
+                        }
+                        else{
+                            $availabelslots=8-$totalbookings;
+
+                            ?>
+                            <td class='$today'><h4>{{$currentDay}}</h4><a href="{{url('book')}}/{{$date}}/{{$veterinarian}}" class='btn btn-success btn-xs'>Book</a><small><i>{{$availabelslots}} slots left</i></small>;
+                            <?php
+                        }
                     }
                     echo "</td>";
                     $currentDay++;
