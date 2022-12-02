@@ -45,7 +45,70 @@
 
 ?>
 
+    <p>
+       <?php
 
+       $daysOfWeek=array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
+        $firstDayOfMonth=mktime(0,0,0,$month,1,$year);
+        $numberDays=date('t',$firstDayOfMonth);
+        $dateComponents=getdate($firstDayOfMonth);
+        $monthName=$dateComponents['month'];
+        $dayOfWeek=$dateComponents['wday'];
+
+        if($dayOfWeek == 0){
+            $dayOfWeek=6;
+        }
+        else{
+            $dayOfWeek=$dayOfWeek - 1;
+        }
+
+        $datetoday=date('Y-m-d');
+
+        $currentDay=1;
+
+        $month=str_pad($month,2,"0",STR_PAD_LEFT);
+
+
+        ?>
+
+
+
+        <h2 class='text-center' ><?php echo "$monthName $year";?></h2>
+        <div class='text-center'>
+    <?php
+        echo "<a class='btn btn-xs btn-primary' href='?month=".date('m',mktime(0,0,0,$month-1,1,$year))."&year=".date('Y',mktime(0,0,0,$month-1,1,$year))."'>Previous Month</a>";
+        echo "<a class='btn btn-xs btn-primary' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a>";
+        echo "<a class='btn btn-xs btn-primary' href='?month=".date('m',mktime(0,0,0,$month+1,1,$year))."&year=".date('Y',mktime(0,0,0,$month+1,1,$year))."'>Next Month</a>";
+    ?>
+    </div>
+    <form id='veterinarian_select_form'>
+        <div class='row'>
+            <div class='col-md-6 col-md-offset-3 form-group'>
+                <label>Select Doctor</label>
+                <select class='form-control' id='veterinarian_select' name='veterinarian'>
+                    <option>Select Doctor</option>
+                    @foreach($data as $d)
+                        <option value="{{$d['veterinarian_id']}}">{{$d['name']}}</option>
+
+                    @endforeach
+                </select>
+                <input type='hidden' name='month' value="{{$month}}" />
+                <input type='hidden' name='year' value="{{$year}}" />
+
+            </div>
+        </div>
+    </form>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+<script>
+$('#veterinarian_select').change(function(){
+    $('#veterinarian_select_form').submit();
+});
+
+$("#veterinarian_select' option[value='<?php echo $veterinarian; ?>']").attr('selected', 'selected');
+</script>
 
 </body>
 @endsection('content')
