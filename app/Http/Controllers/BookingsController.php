@@ -21,8 +21,7 @@ class BookingsController extends Controller
     {
         $month=now()->month;
 
-        $data=User::where('is_doctor',1)
-                ->get();
+        $data=Veterinarian::all();
 
         $veterinarians='';
         $veterinarians.='<option>Select Doctor</option>';

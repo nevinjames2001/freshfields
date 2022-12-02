@@ -88,7 +88,7 @@
                 <select class='form-control' id='veterinarian_select' name='veterinarian'>
                     <option>Select Doctor</option>
                     @foreach($data as $d)
-                        <option value="{{$d['veterinarian_id']}}">{{$d['name']}}</option>
+                        <option value="{{$d['id']}}">{{$d['name']}}</option>
 
                     @endforeach
                 </select>
