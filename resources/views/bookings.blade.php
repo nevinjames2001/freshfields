@@ -98,7 +98,64 @@
             </div>
         </div>
     </form>
+    <table class='table table-bordered'>
+    <?php
+        echo "<tr>";
+            foreach($daysOfWeek as $day){
+                echo "<th class='header'>$day</th>";
+            }
+        echo "</tr>
+        <tr>";
+            if($dayOfWeek > 0){
+                for($k=0;$k<$dayOfWeek;$k++){
+                    echo "<td></td>";
+                }
+            }
 
+            while($currentDay <= $numberDays){
+                if($dayOfWeek == 7){
+                    $dayOfWeek=0;
+                    echo "</tr><tr>";
+                }
+
+                    $currentDayRel = str_pad($currentDay,2,"0",STR_PAD_LEFT);
+                    $date="$year-$month-$currentDayRel";
+
+                    $dayname=strtolower(date("l",strtotime($date)));
+                    $eventNum=0;
+                    $today=$date==date('Y-m-d')?"today":"";
+
+                    if($dayname == 'saturday' || $dayname == 'sunday'){
+                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>";
+                    }
+                    elseif($date < date('Y-m-d')){
+                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
+                    }
+                    else{
+
+                    }
+                    echo "</td>";
+                    $currentDay++;
+                    $dayOfWeek++;
+                }
+
+                if($dayOfWeek != 7){
+                    $remainingDays = 7 -$dayOfWeek;
+                    for($i = 0;$i<$remainingDays;$i++){
+                        echo "<td></td>";
+                    }
+                }
+                echo "</tr>";
+                echo "</table>";
+
+
+
+        ?>
+
+
+        </tr>
+
+    </table>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
