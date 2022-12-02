@@ -17,7 +17,7 @@ class CreateBookingsTable extends Migration
             $table->id('booking_id');
             $table->timestamps();
             $table->unsignedBigInteger('veterinarian_id');
-            $table->foreign('veterinarian_id')->references('veterinarian_id')->on('users')->onDelete('cascade');
+            $table->foreign('veterinarian_id')->references('id')->on('veterinarian')->onDelete('cascade');
             $table->string('name');
             $table->string('email');
             $table->string('date');
