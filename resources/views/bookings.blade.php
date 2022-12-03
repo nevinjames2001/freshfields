@@ -21,8 +21,6 @@
 <body>
 @section('content')
 <?php
-try {
-
         $dateComponents=getdate();
         if(isset($_GET['month']) && isset($_GET['year'])){
             $month=$_GET['month'];
@@ -37,17 +35,13 @@ try {
             $veterinarian=$_GET['veterinarian'];
         }
         else{
-            $veterinarian=1;
+            $veterinarian=0;
         }
         // $month=now()->month;
         // $month=now()->month;
         $year=now()->year;
         $month=str_pad($month,2,"0",STR_PAD_LEFT);
         $monthName=$dateComponents['month'];
-    }
-    catch(Exception $e){
-return $e->getMessage();
-    }
 
 ?>
 
@@ -75,8 +69,6 @@ return $e->getMessage();
         $month=str_pad($month,2,"0",STR_PAD_LEFT);
 
 
-
-
         ?>
 
 
@@ -96,7 +88,7 @@ return $e->getMessage();
                 <select class='form-control' id='veterinarian_select' name='veterinarian'>
                     <option>Select Doctor</option>
                     @foreach($data as $d)
-                        <option value="{{$d['id']}}">{{$d['veterinarian_name']}}</option>
+                        <option value="{{$d['veterinarian_id']}}">{{$d['veterinarian_name']}}</option>
 
                     @endforeach
                 </select>
@@ -142,7 +134,18 @@ return $e->getMessage();
                     else{
                         $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
                         $totalbookings=count($totalbookings);
+                        // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
 
+                        if($totalbookings==8){
+                            echo "<td class='$today'><h4>$currentDay</h4><a href='#' class='btn btn-danger btn-xs'>All Booked</a>";
+                        }
+                        else{
+                            $availabelslots=8-$totalbookings;
+
+                            ?>
+                            <td class='$today'><h4>{{$currentDay}}</h4><a href="{{url('book')}}/{{$date}}/{{$veterinarian}}" class='btn btn-success btn-xs'>Book</a><small><i>{{$availabelslots}} slots left</i></small>;
+                            <?php
+                        }
                     }
                     echo "</td>";
                     $currentDay++;
