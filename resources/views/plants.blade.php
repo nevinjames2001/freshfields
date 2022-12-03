@@ -26,7 +26,7 @@
             <th scope="col">Image</th>
         </tr>
     </thead> -->
-
+    <div class="row">
 @foreach ($rows as $p)
     <!-- <tr>
         <td>{{$p['name']}}</td>
@@ -38,14 +38,17 @@
 
     </tr>
     </table> -->
-    <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+
+    <div class="card col-4 col-md-4 mb-4" style="width: 18rem;margin-top:20px;margin-left:20px;">
         <div class="bg-white rounded shadow-sm"><a href="{{url('viewPlant')}}/{{$p['id']}}/{{Auth::user()->id}}"><img src="{{$p['image']}}" alt="" class="img-fluid card-img-top"></a>
         <div class="p-4">
             <h5> <a href="#" class="text-dark text-center  text-l ">{{$p['name']}}</a></h5>
         </div>
         </div>
     </div>
+
 @endforeach
+</div>
 <br>
 <form action="{{url('addPlants')}}/"  >
     <div class="mb-3">

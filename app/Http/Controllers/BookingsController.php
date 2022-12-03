@@ -32,32 +32,12 @@ class BookingsController extends Controller
         if($i=0){
             $first_veterinarian=$data['veterinarian_id'];
         }
-        // $veterinarian;
-        // if($veterinarian != 0){
-        //     $first_veterinarian=$veterinarian;
-        // }
 
-        // foreach($data as $d){
-        //     $veterinarians.='<option value='".$d['veterinarian_id']."'>".$d['veterinarian_name']."</option>';
-        // }
         $date="2022-10-26";
         $data2=Bookings::where('date',$date)
                 ->where('veterinarian_id',$first_veterinarian)
                 ->get();
 
-
-        // while($currentDay <= $numberDays){
-
-        //     if($dayOfWeek == 7){
-        //         $dayOfWeek=0;
-
-        //     }
-        // }
-
-
-
-
-        // return view('bookings',compact('first_veterinarian','data','monthName','year','month','daysOfWeek'));
         return view('bookings',compact('first_veterinarian','data','month','data2'));
 
 
@@ -83,11 +63,6 @@ class BookingsController extends Controller
         $bookings1[]=Bookings::where('date',$date)
                 ->where('veterinarian_id',$first_veterinarian)
                 ->get();
-
-        // foreach($bookings1 as $bookings2){
-        //     var_dump($bookings2->timeslot);
-        // }
-
 
 
         $duration=60;

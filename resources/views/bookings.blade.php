@@ -29,8 +29,8 @@ try {
             $year=$_GET['year'];
         }
         else{
-            $month='12';
-            $year='2022';
+            $month=$dateComponents['mon'];
+            $year=$dateComponents['year'];
         }
 
         if(isset($_GET['veterinarian'])){
