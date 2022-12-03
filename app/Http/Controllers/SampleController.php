@@ -123,7 +123,7 @@ class SampleController extends Controller
 
         $user->user_image = $user_image;
         $user->address = $request->address;
-        $user->phone = $phone;
+        $user->phone = $request->phone;
 
         $user->save();
 
