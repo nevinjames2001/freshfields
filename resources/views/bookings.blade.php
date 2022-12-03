@@ -21,7 +21,7 @@
 <body>
 @section('content')
 <?php
-try{
+try {
 
         $dateComponents=getdate();
         if(isset($_GET['month']) && isset($_GET['year'])){
@@ -44,6 +44,9 @@ try{
         $year=now()->year;
         $month=str_pad($month,2,"0",STR_PAD_LEFT);
         $monthName=$dateComponents['month'];
+    }
+    catch(Exception $e){
+return $e->getMessage();
     }
 
 ?>
@@ -70,6 +73,8 @@ try{
         $currentDay=1;
 
         $month=str_pad($month,2,"0",STR_PAD_LEFT);
+
+
 
 
         ?>
