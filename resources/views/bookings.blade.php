@@ -21,6 +21,8 @@
 <body>
 @section('content')
 <?php
+try{
+
         $dateComponents=getdate();
         if(isset($_GET['month']) && isset($_GET['year'])){
             $month=$_GET['month'];
@@ -42,6 +44,7 @@
         $year=now()->year;
         $month=str_pad($month,2,"0",STR_PAD_LEFT);
         $monthName=$dateComponents['month'];
+    }
 
 ?>
 
