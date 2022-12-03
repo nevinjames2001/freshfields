@@ -140,8 +140,8 @@ return $e->getMessage();
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
-                        // $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
-                        // $totalbookings=count($totalbookings);
+                        $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
+                        $totalbookings=count($totalbookings);
 
                     }
                     echo "</td>";
