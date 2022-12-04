@@ -135,7 +135,6 @@
                     }
                     else{
                         $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
-                        $totalbookings=count($totalbookings);
                         // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
 
                         if($totalbookings==8){
