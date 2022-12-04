@@ -95,14 +95,17 @@ class BookingsController extends Controller
     public function timeSlot(Request $request){
 
         $bookConfirm=new Bookings();
+
         $bookConfirm->timeslot=$request->timeslot;
         $bookConfirm->date=$request->date;
         $bookConfirm->name=$request->name;
         $bookConfirm->email=$request->email;
         $bookConfirm->phone=$request->phone;
-        $bookConfirm->veterinarian_id=$request->first_veterinarian;
+        $bookConfirm->veterinarian_id=$request->veterinarian_id;
         $bookConfirm->reason=$request->reason;
+
         $bookConfirm->save();
+
 
         return redirect('/bookings');
     }
