@@ -122,8 +122,7 @@
 
                     $currentDayRel = str_pad($currentDay,2,"0",STR_PAD_LEFT);
                     // $date="$year-$month-$currentDayRel";
-                    $date="2022-12-11";
-                    $year="2022";
+
 
                     $dayname=strtolower(date("l",strtotime($date)));
                     $eventNum=0;
@@ -136,6 +135,8 @@
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
+                        $date="2022-12-08";
+                        $year="2022";
                         $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
                         $totalbookings=count($totalbookings);
                         // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
