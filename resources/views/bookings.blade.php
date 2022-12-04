@@ -136,7 +136,7 @@
                     }
                     else{
                         if($veterinarian > 0){
-                            $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$veterinarian);
+                            $totalbookings = App\Http\Controllers\BookingsController::checkSlots($date,$veterinarian);
                         }
                         else{
                             $totalbookings=8;

@@ -43,13 +43,13 @@ class BookingsController extends Controller
 
     }
 
-    public function checkSlots($date,$first_veterinarian){
+    public static function checkSlots($date,$first_veterinarian){
 
         $totalbookings=Bookings::where('date',$date)
                 ->where('veterinarian_id',$first_veterinarian)
                 ->get();
         $totalbookings=count($totalbookings);
-        console.log($totalbookings);
+        alert($totalbookings);
 
         return $totalbookings;
     }
