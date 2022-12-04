@@ -101,7 +101,7 @@ class BookingsController extends Controller
         $bookConfirm->name=$request->name;
         $bookConfirm->email=$request->email;
         $bookConfirm->phone=$request->phone;
-        $bookConfirm->veterinarian_id=$request->veterinarian_id;
+        $bookConfirm->veterinarian_id=$request->first_veterinarian;
         $bookConfirm->reason=$request->reason;
 
         //  $bookConfirm->timeslot="10:00AM-11:00AM";
