@@ -37,8 +37,8 @@
         // else{
         //     $veterinarian=0;
         // }
-
         $veterinarian=1;
+
         // $month=now()->month;
         // $month=now()->month;
         $year=now()->year;

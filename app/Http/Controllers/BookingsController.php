@@ -43,23 +43,17 @@ class BookingsController extends Controller
 
     }
 
-    // public function checkSlots($date,$year,$first_veterinarian){
-
-    //     $year1=now()->year;
-    //     $totalbookings=Bookings::where('date',$date)
-    //             ->where('veterinarian_id',$first_veterinarian)
-    //             ->get();
-
-    //     return $totalbookings;
-    // }
-
-    public function checkSlots($date){
+    public function checkSlots($date,$year,$first_veterinarian){
 
         $year1=now()->year;
-        $totalbookings=1;
+        $totalbookings=Bookings::where('date',$date)
+                ->where('veterinarian_id',$first_veterinarian)
+                ->get();
 
         return $totalbookings;
     }
+
+
 
 
 
