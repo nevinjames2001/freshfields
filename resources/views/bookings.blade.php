@@ -121,7 +121,7 @@
                 }
 
                     $currentDayRel = str_pad($currentDay,2,"0",STR_PAD_LEFT);
-                    // $date="$year-$month-$currentDayRel";
+                    $date="$year-$month-$currentDayRel";
 
 
                     $dayname=strtolower(date("l",strtotime($date)));
