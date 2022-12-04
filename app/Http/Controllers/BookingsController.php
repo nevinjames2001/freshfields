@@ -49,6 +49,7 @@ class BookingsController extends Controller
                 ->where('veterinarian_id',$first_veterinarian)
                 ->get();
         $totalbookings=count($totalbookings);
+        console.log($totalbookings);
 
         return $totalbookings;
     }
