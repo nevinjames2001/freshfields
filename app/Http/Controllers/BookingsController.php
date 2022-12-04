@@ -113,7 +113,7 @@ class BookingsController extends Controller
         // $bookConfirm->veterinarian_id="2";
         // $bookConfirm->reason="Check for cattles";
 
-        $bookConfirm->save();
+        // $bookConfirm->save();
 
 
         return redirect('/plants');
