@@ -45,11 +45,11 @@ class BookingsController extends Controller
 
     public static function checkSlots($date,$first_veterinarian){
 
-        // $totalbookings=Bookings::where('date',$date)
-        //         ->where('veterinarian_id',$first_veterinarian)
-        //         ->get();
-        // $totalbookings=count($totalbookings);
-        $totalbookings=1;
+        $totalbookings=Bookings::where('date',$date)
+                ->where('veterinarian_id',$first_veterinarian)
+                ->get();
+        $totalbookings=count($totalbookings);
+        // $totalbookings=1;
 
         return $totalbookings;
     }
