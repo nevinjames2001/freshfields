@@ -31,13 +31,12 @@
             $year=$dateComponents['year'];
         }
 
-        // if(isset($_GET['veterinarian'])){
-        //     $veterinarian=$_GET['veterinarian'];
-        // }
-        // else{
-        //     $veterinarian=0;
-        // }
-        $veterinarian=1;
+        if(isset($_GET['veterinarian'])){
+            $veterinarian=$_GET['veterinarian'];
+        }
+        else{
+            $veterinarian=0;
+        }
 
         // $month=now()->month;
         // $month=now()->month;
@@ -135,8 +134,6 @@
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
-                        $date="2022-12-08";
-                        $year="2022";
                         $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
                         $totalbookings=count($totalbookings);
                         // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
