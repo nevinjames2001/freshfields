@@ -34,7 +34,7 @@
                             <input type="text" name="phone" class="form-control" value="{{$row->phone}}" placeholder="123456789">
                         </div>
                         <div class="form-group mb-3">
-                            <input type="password" name="password" class="form-control" >
+                            <input type="password" name="password" class="form-control" placeholder="password">
                         </div>
                         <div class="form-group mb-3">
                             <input type="file" name="user_image">
