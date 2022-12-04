@@ -95,17 +95,17 @@ class BookingsController extends Controller
     public function timeSlot(Request $request){
         $vetid=$request->first_veterinarian;
         // if($vetid !=0){
-            $bookConfirm=new Bookings();
+        //     $bookConfirm=new Bookings();
 
-            $bookConfirm->timeslot=$request->timeslot;
-            $bookConfirm->date=$request->date;
-            $bookConfirm->name=$request->name;
-            $bookConfirm->email=$request->email;
-            $bookConfirm->phone=$request->phone;
-            $bookConfirm->veterinarian_id=$vetid;
-            $bookConfirm->reason=$request->reason;
+        //     $bookConfirm->timeslot=$request->timeslot;
+        //     $bookConfirm->date=$request->date;
+        //     $bookConfirm->name=$request->name;
+        //     $bookConfirm->email=$request->email;
+        //     $bookConfirm->phone=$request->phone;
+        //     $bookConfirm->veterinarian_id=$vetid;
+        //     $bookConfirm->reason=$request->reason;
 
-            $bookConfirm->save();
+        //     $bookConfirm->save();
         // }
         return redirect('/bookings');
     }
