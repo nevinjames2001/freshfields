@@ -94,7 +94,7 @@ class BookingsController extends Controller
 
     public function timeSlot(Request $request){
         $vetid=$request->first_veterinarian;
-        if($vetid !=0){
+        // if($vetid !=0){
             $bookConfirm=new Bookings();
 
             $bookConfirm->timeslot=$request->timeslot;
@@ -106,7 +106,7 @@ class BookingsController extends Controller
             $bookConfirm->reason=$request->reason;
 
             $bookConfirm->save();
-        }
+        // }
         return redirect('/bookings');
     }
 
