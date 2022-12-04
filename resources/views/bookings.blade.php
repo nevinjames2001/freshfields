@@ -134,9 +134,12 @@
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
-                        $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
+                        ?>
+                        @php
+                        echo App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
+                        @endphp
                         // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
-
+                        <?php
                         if($totalbookings==8){
                             echo "<td class='$today'><h4>$currentDay</h4><a href='#' class='btn btn-danger btn-xs'>All Booked</a>";
                         }
