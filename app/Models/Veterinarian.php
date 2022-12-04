@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Veterinarian extends Model
 {
     protected $table='veterinarian';
-    protected $fillable=['veterinarian_id','veterinarian_name'];
+    protected $fillable=['id','veterinarian_name'];
 
     public $timestamps=false;
 
