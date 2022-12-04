@@ -133,7 +133,7 @@
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
-                        $totalbookings =App\Http\Controllers\BookingsController::checkSlots($year);
+                        // $totalbookings =App\Http\Controllers\BookingsController::checkSlots($year);
                         // $totalbookings=count($totalbookings);
                         // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
 
