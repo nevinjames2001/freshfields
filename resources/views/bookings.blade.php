@@ -29,6 +29,7 @@
         else{
             $month=$dateComponents['mon'];
             $year=$dateComponents['year'];
+
         }
 
         if(isset($_GET['veterinarian'])){
@@ -128,28 +129,13 @@
                     $today=$date==date('Y-m-d')?"today":"";
 
                     if($dayname == 'saturday' || $dayname == 'sunday'){
-                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>$date";
+                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>$month";
                     }
                     elseif($date < date('Y-m-d')){
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
-                        ?>
-                        @php
-                        echo App\Http\Controllers\BookingsController::checkSlots($date,$year,$veterinarian);
-                        @endphp
-                        // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
-                        <?php
-                        if($totalbookings==8){
-                            echo "<td class='$today'><h4>$currentDay</h4><a href='#' class='btn btn-danger btn-xs'>All Booked</a>";
-                        }
-                        else{
-                            $availabelslots=8-$totalbookings;
 
-                            ?>
-                            <td class='$today'><h4>{{$currentDay}}</h4><a href="{{url('book')}}/{{$date}}/{{$veterinarian}}" class='btn btn-success btn-xs'>Book</a><small><i>{{$availabelslots}} slots left</i></small>;
-                            <?php
-                        }
                     }
                     echo "</td>";
                     $currentDay++;
