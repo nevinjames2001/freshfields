@@ -129,13 +129,13 @@
                     $today=$date==date('Y-m-d')?"today":"";
 
                     if($dayname == 'saturday' || $dayname == 'sunday'){
-                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>$month";
+                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>$veterinarian";
                     }
                     elseif($date < date('Y-m-d')){
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
-                        if($veterinarian){
+                        if($veterinarian > 0){
                             $totalbookings =App\Http\Controllers\BookingsController::checkSlots($date,$veterinarian);
                         }
                         else{
