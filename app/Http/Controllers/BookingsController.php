@@ -92,25 +92,25 @@ class BookingsController extends Controller
     }
 
 
-    public function timeSlot(Request $request){
+    public function timeSlotSubmit(Request $request){
 
         $bookConfirm=new Bookings();
 
-        // $bookConfirm->timeslot=$request->timeslot;
-        // $bookConfirm->date=$request->date;
-        // $bookConfirm->name=$request->name;
-        // $bookConfirm->email=$request->email;
-        // $bookConfirm->phone=$request->phone;
-        // $bookConfirm->veterinarian_id=$request->veterinarian_id;
-        // $bookConfirm->reason=$request->reason;
+        $bookConfirm->timeslot=$request->timeslot;
+        $bookConfirm->date=$request->date;
+        $bookConfirm->name=$request->name;
+        $bookConfirm->email=$request->email;
+        $bookConfirm->phone=$request->phone;
+        $bookConfirm->veterinarian_id=$request->veterinarian_id;
+        $bookConfirm->reason=$request->reason;
 
-         $bookConfirm->timeslot="10:00AM-11:00AM";
-        $bookConfirm->date="2022-12-26";
-        $bookConfirm->name="Seo James";
-        $bookConfirm->email="seojames@gmail.com";
-        $bookConfirm->phone="1234567890";
-        $bookConfirm->veterinarian_id="2";
-        $bookConfirm->reason="Check for cattles";
+        //  $bookConfirm->timeslot="10:00AM-11:00AM";
+        // $bookConfirm->date="2022-12-26";
+        // $bookConfirm->name="Seo James";
+        // $bookConfirm->email="seojames@gmail.com";
+        // $bookConfirm->phone="1234567890";
+        // $bookConfirm->veterinarian_id="2";
+        // $bookConfirm->reason="Check for cattles";
 
         $bookConfirm->save();
 
