@@ -20,15 +20,15 @@ class PlantsGalleryController extends Controller
 
         $plantsAdd=new PlantsGallery;
 
-        $plantsAdd->name=$req->name;
-        $plantsAdd->harvest=$req->harvest;
-        $plantsAdd->yield=$req->yield;
-        $plantsAdd->irrigation=$req->irrigation;
-        $plantsAdd->image=$req->image;
-        $plantsAdd->season=$req->season;
-        $plantsAdd->preparation=$req->preparation;
-        $plantsAdd->cultivation=$req->cultivation;
-        $plantsAdd->pestManagement=$req->pestManagement;
+        // $plantsAdd->name=$req->name;
+        // $plantsAdd->harvest=$req->harvest;
+        // $plantsAdd->yield=$req->yield;
+        // $plantsAdd->irrigation=$req->irrigation;
+        // $plantsAdd->image=$req->image;
+        // $plantsAdd->season=$req->season;
+        // $plantsAdd->preparation=$req->preparation;
+        // $plantsAdd->cultivation=$req->cultivation;
+        // $plantsAdd->pestManagement=$req->pestManagement;
 
 
         $plantsAdd->save();
