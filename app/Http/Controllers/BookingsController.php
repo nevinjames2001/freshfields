@@ -94,16 +94,15 @@ class BookingsController extends Controller
 
     public static function timeSlotSubmit(Request $request){
 
-        $bookConfirm=new Bookings();
+        $bookConfirm1=new Bookings();
+        $bookConfirm1->timeslot=$request->timeslot;
+        $bookConfirm1->date=$request->date;
+        $bookConfirm1->veterinarian_id=$request->first_veterinarian;
+        $bookConfirm1->name=$request->name;
+        $bookConfirm1->email=$request->email;
+        $bookConfirm1->phone=$request->phone;
 
-        // $bookConfirm->timeslot=$request->timeslot;
-        // $bookConfirm->date=$request->date;
-        // $bookConfirm->veterinarian_id=$request->first_veterinarian;
-        // $bookConfirm->name=$request->name;
-        // $bookConfirm->email=$request->email;
-        // $bookConfirm->phone=$request->phone;
-
-        // $bookConfirm->reason=$request->reason;
+        $bookConfirm1->reason=$request->reason;
 
         //  $bookConfirm->timeslot="10:00AM-11:00AM";
         // $bookConfirm->date="2022-12-26";
@@ -113,7 +112,7 @@ class BookingsController extends Controller
         // $bookConfirm->veterinarian_id="2";
         // $bookConfirm->reason="Check for cattles";
 
-        // $bookConfirm->save();
+        $bookConfirm1->save();
 
 
         return redirect('/plants');
