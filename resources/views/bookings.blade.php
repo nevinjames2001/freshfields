@@ -21,6 +21,7 @@
 <body>
 @section('content')
 <?php
+        use \App\Http\Controllers\BookingsController;
         $dateComponents=getdate();
         if(isset($_GET['month']) && isset($_GET['year'])){
             $month=$_GET['month'];
