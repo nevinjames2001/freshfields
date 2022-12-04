@@ -21,7 +21,6 @@
 <body>
 @section('content')
 <?php
-        use \App\Http\Controllers\BookingsController;
         $dateComponents=getdate();
         if(isset($_GET['month']) && isset($_GET['year'])){
             $month=$_GET['month'];
@@ -32,12 +31,14 @@
             $year=$dateComponents['year'];
         }
 
-        if(isset($_GET['veterinarian'])){
-            $veterinarian=$_GET['veterinarian'];
-        }
-        else{
-            $veterinarian=0;
-        }
+        // if(isset($_GET['veterinarian'])){
+        //     $veterinarian=$_GET['veterinarian'];
+        // }
+        // else{
+        //     $veterinarian=0;
+        // }
+
+        $veterinarian=0;
         // $month=now()->month;
         // $month=now()->month;
         $year=now()->year;
@@ -127,16 +128,12 @@
                     $today=$date==date('Y-m-d')?"today":"";
 
                     if($dayname == 'saturday' || $dayname == 'sunday'){
-                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>";
+                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>$date";
                     }
                     elseif($date < date('Y-m-d')){
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
                     }
                     else{
-                        // $totalbookings =App\Http\Controllers\BookingsController::checkSlots($year);
-                        // $totalbookings=count($totalbookings);
-                        // $totalbookings=checkSlots($mysqli,$date,$year,$first_veterinarian);
-
 
                     }
                     echo "</td>";
