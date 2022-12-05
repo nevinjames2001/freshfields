@@ -94,7 +94,7 @@ class BookingsController extends Controller
 
     public function bookAppointment(Request $request){
 
-        $bookConfirm=new Bookings();
+        $bookConfirm=new Bookings;
 
         // $bookConfirm->timeslot=$request->timeslot;
         // $bookConfirm->date=$request->date;
@@ -153,7 +153,7 @@ class BookingsController extends Controller
     }
 
     public function bookOff(Request $request){
-        $bookConfirm=new Bookings();
+        $bookConfirm=new Bookings;
 
         $bookConfirm->timeslot=$request->timeslot;
         $bookConfirm->date=$request->date;
