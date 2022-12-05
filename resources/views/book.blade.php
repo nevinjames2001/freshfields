@@ -87,7 +87,7 @@
                                     <input type="text" class="form-control" name="reason" required>
                                 </div>
 
-                                <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+                                <button class="btn btn-primary" type="submit" >Submit</button>
                             </form>
                         </div>
                     </div>
