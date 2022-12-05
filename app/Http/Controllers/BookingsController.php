@@ -92,18 +92,18 @@ class BookingsController extends Controller
     }
 
 
-    public function bookAppointment(Request $request){
+    public function bookAppointment(Request $req){
 
         $bookConfirm=new Bookings;
 
-        $bookConfirm->timeslot=$request->timeslot;
-        $bookConfirm->date=$request->date;
-        $bookConfirm->veterinarian_id=$request->first_veterinarian;
-        $bookConfirm->name=$request->name;
-        $bookConfirm->email=$request->email;
-        $bookConfirm->phone=$request->phone;
+        $bookConfirm->timeslot=$req->timeslot;
+        $bookConfirm->date=$req->date;
+        $bookConfirm->veterinarian_id=$req->first_veterinarian;
+        $bookConfirm->name=$req->name;
+        $bookConfirm->email=$req->email;
+        $bookConfirm->phone=$req->phone;
 
-        $bookConfirm->reason=$request->reason;
+        $bookConfirm->reason=$req->reason;
 
         //  $bookConfirm->timeslot="10:00AM-11:00AM";
         // $bookConfirm->date="2022-12-26";
