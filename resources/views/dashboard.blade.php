@@ -3,22 +3,11 @@
 @section('content')
 
 <div class="row">
-    <div class="col-sm-4 col-lg-3">
-		<div class="card" style="height:255px; overflow-y: scroll;">
-			<div class="card-header" style="background-color: #81C784;">
-				<input type="text" class="form-control" placeholder="Search User..." autocomplete="off" id="search_people" onkeyup="search_user('{{ Auth::id() }}', this.value);" />
-			</div>
-			<div class="card-body" style="background-color: #C8E6C9;">
-				<div id="search_people_area" class="mt-3"></div>
-			</div>
-		</div>
-		<br />
-		<div class="card" style="height:255px; overflow-y: scroll;">
-			<div class="card-header" style="background-color: #81C784;"><b>Notification</b></div>
-			<div class="card-body" style="background-color: #C8E6C9;">
-				<ul class="list-group" id="notification_area">
+<div class="col-sm-4 col-lg-3">
+		<div class="card">
+			<div class="card-header" style="background-color: #81C784;"><b>Connected User</b></div>
+			<div class="card-body" style="background-color: #C8E6C9;" id="user_list">
 
-				</ul>
 			</div>
 		</div>
 	</div>
@@ -36,10 +25,21 @@
 		</div>
 	</div>
     <div class="col-sm-4 col-lg-3">
-		<div class="card">
-			<div class="card-header" style="background-color: #81C784;"><b>Connected User</b></div>
-			<div class="card-body" style="background-color: #C8E6C9;" id="user_list">
+		<div class="card" style="height:255px; overflow-y: scroll;">
+			<div class="card-header" style="background-color: #81C784;">
+				<input type="text" class="form-control" placeholder="Search User..." autocomplete="off" id="search_people" onkeyup="search_user('{{ Auth::id() }}', this.value);" />
+			</div>
+			<div class="card-body" style="background-color: #C8E6C9;">
+				<div id="search_people_area" class="mt-3"></div>
+			</div>
+		</div>
+		<br />
+		<div class="card" style="height:255px; overflow-y: scroll;">
+			<div class="card-header" style="background-color: #81C784;"><b>Notification</b></div>
+			<div class="card-body" style="background-color: #C8E6C9;">
+				<ul class="list-group" id="notification_area">
 
+				</ul>
 			</div>
 		</div>
 	</div>
