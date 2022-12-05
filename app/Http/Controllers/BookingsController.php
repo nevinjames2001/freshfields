@@ -9,6 +9,7 @@ use App\Models\PlantsGallery;
 use App\Models\Veterinarian;
 use DateTime;
 use DateInterval;
+use Log;
 
 class BookingsController extends Controller
 {
@@ -112,8 +113,13 @@ class BookingsController extends Controller
         // $bookConfirm->phone="1234567890";
         // $bookConfirm->veterinarian_id="2";
         // $bookConfirm->reason="Check for cattles";
+        try{
+            $bookConfirm->save();
+            Log::debug("Book Confirm saved successfully");
+        }catch(Exception $e){
+            Log::debug("Error: ".$e->getMessage());
+        }
 
-        $bookConfirm->save();
 
 
         return redirect('/bookings');
