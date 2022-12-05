@@ -115,7 +115,7 @@ class BookingsController extends Controller
         // $bookConfirm->reason="Check for cattles";
         try{
             $bookConfirm->save();
-            Log::debug("Book Confirm saved successfully");
+            Log::debug("Book Confirm saved successfully in log");
         }catch(Exception $e){
             Log::debug("Error: ".$e->getMessage());
         }
