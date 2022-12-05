@@ -129,7 +129,7 @@
                     $today=$date==date('Y-m-d')?"today":"";
 
                     if($dayname == 'saturday' || $dayname == 'sunday'){
-                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>$veterinarian";
+                        echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>HOLIDAY</button>";
                     }
                     elseif($date < date('Y-m-d')){
                         echo "<td><h4>$currentDay</h4><button class='btn btn-danger btn-xs'>N/A</button>";
