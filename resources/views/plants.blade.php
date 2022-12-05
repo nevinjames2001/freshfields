@@ -50,45 +50,7 @@
 @endforeach
 </div>
 <br>
-<form action="{{url('addPlants')}}/"  >
-    <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="mb-3">
-        <label for="harvest" class="form-label">Harvest</label>
-        <input type="text" class="form-control" id="harvest" name="harvest" required>
-    </div>
-    <div class="mb-3">
-        <label for="Yield" class="form-label">Yield</label>
-        <input type="text" class="form-control" id="yield" name="yield" required>
-    </div>
-    <div class="mb-3">
-        <label for="irrigation" class="form-label">Irrigation</label>
-        <input type="text" class="form-control" id="irrigation" name="irrigation" required>
-    </div>
-    <div class="mb-3">
-        <label for="season" class="form-label">Season</label>
-        <input type="text" class="form-control" id="season" name="season" required>
-    </div>
-    <div class="mb-3">
-        <label for="preparation" class="form-label">Preparation: </label>
-        <input type="text" class="form-control" id="preparation" name="preparation" required>
-    </div>
-    <div class="mb-3">
-        <label for="cultivation" class="form-label">Cultivation: </label>
-        <input type="text" class="form-control" id="cultivation" name="cultivation" required>
-    </div>
-    <div class="mb-3">
-        <label for="pestManagement" class="form-label">Pest Management: </label>
-        <input type="text" class="form-control" id="pestManagement" name="pestManagement" required>
-    </div>
-    <div class="mb-3">
-        <label for="image" class="form-label">Add Image:</label>
-        <input type="text" class="form-control" id="image" name="image" required>
-    </div>
-    <button type="submit">Add Booking</button>
-</form>
+
 </div>
     </body>
     @endsection('content')
