@@ -63,7 +63,7 @@
                 <div class='modal-body'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <form action="{{url('timeSlotSubmit')}}/" >
+                            <form action="{{url('timeSlotSubmit')}}" >
                                 <div class="form-group">
                                     <label for="">Timeslot</label>
                                     <input type="text" name="timeslot" id="timeslot" class="form-control" readonly required>

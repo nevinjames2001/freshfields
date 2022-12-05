@@ -92,7 +92,7 @@ class BookingsController extends Controller
     }
 
 
-    public function timeSlotSubmit(Request $request){
+    public function bookAppointment(Request $request){
 
         $bookConfirm=new Bookings();
 
