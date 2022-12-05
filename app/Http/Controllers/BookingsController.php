@@ -96,14 +96,14 @@ class BookingsController extends Controller
 
         $bookConfirm=new Bookings();
 
-        $bookConfirm->timeslot=$request->timeslot;
-        $bookConfirm->date=$request->date;
-        $bookConfirm->veterinarian_id=$request->first_veterinarian;
-        $bookConfirm->name=$request->name;
-        $bookConfirm->email=$request->email;
-        $bookConfirm->phone=$request->phone;
+        // $bookConfirm->timeslot=$request->timeslot;
+        // $bookConfirm->date=$request->date;
+        // $bookConfirm->veterinarian_id=$request->first_veterinarian;
+        // $bookConfirm->name=$request->name;
+        // $bookConfirm->email=$request->email;
+        // $bookConfirm->phone=$request->phone;
 
-        $bookConfirm->reason=$request->reason;
+        // $bookConfirm->reason=$request->reason;
 
         //  $bookConfirm->timeslot="10:00AM-11:00AM";
         // $bookConfirm->date="2022-12-26";
@@ -113,7 +113,7 @@ class BookingsController extends Controller
         // $bookConfirm->veterinarian_id="2";
         // $bookConfirm->reason="Check for cattles";
 
-        $bookConfirm->save();
+        // $bookConfirm->save();
 
 
         return redirect('/bookings');
