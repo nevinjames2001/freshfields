@@ -126,25 +126,25 @@ class BookingsController extends Controller
     }
 
     public function bookingDisplay(){
-        $duration=60;
-        $cleanup = 0;
-        $start="09:00";
-        $end="17:00";
+//         $duration=60;
+//         $cleanup = 0;
+//         $start="09:00";
+//         $end="17:00";
 
-        $start=new DateTime($start);
-        $end=new DateTime($end);
-        $interval=new DateInterval("PT".$duration."M");
-        $cleanupInterval=new DateInterval("PT".$cleanup."M");
-        $slot=array();
+//         $start=new DateTime($start);
+//         $end=new DateTime($end);
+//         $interval=new DateInterval("PT".$duration."M");
+//         $cleanupInterval=new DateInterval("PT".$cleanup."M");
+//         $slot=array();
 
-        for($intStart=$start;$intStart<$end;$intStart -> add($interval) ->add($cleanupInterval)){
-            $endPeriod =clone $intStart;
-            $endPeriod->add($interval);
-            if($endPeriod>$end){
-                break;
-            }
-            $slot[]=$intStart->format("H:iA")."-".$endPeriod->format("H:iA");
-        }
+//         for($intStart=$start;$intStart<$end;$intStart -> add($interval) ->add($cleanupInterval)){
+//             $endPeriod =clone $intStart;
+//             $endPeriod->add($interval);
+//             if($endPeriod>$end){
+//                 break;
+//             }
+//             $slot[]=$intStart->format("H:iA")."-".$endPeriod->format("H:iA");
+//         }
         return redirect('/bookings');
 //         return view('handleDoctor',compact('slot','duration'));
     }
