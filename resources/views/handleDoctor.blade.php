@@ -33,57 +33,7 @@ $veterinarian_id=Auth::user()->veterinarian_id;
     </style>
 </head>
 <body>
-<div class="main">
-<table class="table" style="background-color: #DCEDC8;">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email ID</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Reason</th>
-                    <th scope="col">Timeslot</th>
-                </tr>
-            </thead>
 
-        @foreach($appointments as $appoint)
-            <tr>
-                <td>{{$appoint['name']}}</td>
-                <td>{{$appoint['email']}}</td>
-                <td>{{$appoint['date']}}</td>
-                <td>{{$appoint['phone']}}</td>
-                <td>{{$appoint['reason']}}</td>
-                <td>{{$appoint['timeslot']}}</td>
-
-            </tr>
-        @endforeach
-</table>
-
-<div class="bookOff">
-    <form action="{{url('bookOff')}}/">
-        <h4>Time to Book off:</h4><br>
-        <div class="form-group">
-            <label for="date" >Date: <label>
-            <input type="date" class="form-control" id="date" name="date">
-        </div><br>
-        <div class="form-group">
-            <label for="timeslot" >Time: <label>
-            <select id="timeslot" name="timeslot">
-
-                @foreach($slot as $s)
-                    <option value="{{$s}}">{{$s}}</option>
-                @endforeach
-            </select>
-        </div><br>
-        <input type="hidden" name="name" value="{{ Auth::user()->name}}">
-        <input type="hidden" name="email" value="{{ Auth::user()->email}}">
-        <input type="hidden" name="phone" value="{{ Auth::user()->phone}}">
-        <input type="hidden" name="phone" value="2896983628">
-        <input type="hidden" name="veterinarian_id" value="{{ Auth::user()->veterinarian_id}}">
-        <input type="hidden" name="reason" value="Book Off">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
 <body>
 </div>
 </html>
