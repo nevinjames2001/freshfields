@@ -50,7 +50,7 @@ Route::get('/book/{date}/{veterinarian_id}', [BookingsController::class, 'dateBo
 Route::get('/timeSlotSubmit', [BookingsController::class, 'bookAppointment']);
 Route::get('/doctor/home', [BookingsController::class, 'bookingDisplay']);
 
-Route::get('bookOff', [BookingsController::class, 'bookOff'])->name('doctor.route')->middleware('doctor');
+Route::get('bookOff', [BookingsController::class, 'bookOff']);
 
 Route::get('plants', [PlantsGalleryController::class,'index'])->name('plants');
 Route::get('addPlants', [PlantsGalleryController::class, 'addPlants'])->middleware('user');
