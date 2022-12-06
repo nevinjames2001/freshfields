@@ -48,10 +48,8 @@ Route::controller(SampleController::class)->group(function(){
 Route::get('/bookings', [BookingsController::class, 'index'])->name('bookings');
 Route::get('/book/{date}/{veterinarian_id}', [BookingsController::class, 'dateBook'])->name('book');
 Route::get('/timeSlotSubmit', [BookingsController::class, 'bookAppointment']);
-// Route::get('/doctor/home', [BookingsController::class, 'bookingDisplay'])->name('doctor.route')->middleware('doctor');
-Route::get('/doctor/home', function () {
-    return view('welcome');
-});
+Route::get('/doctor/home', [BookingsController::class, 'bookingDisplay'])->name('handleDoctor')->middleware('doctor');
+
 Route::get('bookOff', [BookingsController::class, 'bookOff'])->name('doctor.route')->middleware('doctor');
 
 Route::get('plants', [PlantsGalleryController::class,'index'])->name('plants');
