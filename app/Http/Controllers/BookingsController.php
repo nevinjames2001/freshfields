@@ -145,8 +145,8 @@ class BookingsController extends Controller
             }
             $slot[]=$intStart->format("H:iA")."-".$endPeriod->format("H:iA");
         }
-
-        return view('handleDoctor',compact('slot','duration'));
+        return redirect('/bookings');
+//         return view('handleDoctor',compact('slot','duration'));
     }
 
     public function appointments($veterinarian_id){
