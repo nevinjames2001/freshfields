@@ -3,12 +3,9 @@
 
 @section('content')
 <?php
-$name= Auth::user()->name;
 $veterinarian_id=Auth::user()->veterinarian_id;
 
-?>
-
-<?php $appointments=App\Http\Controllers\BookingsController::appointments($veterinarian_id); ?>
+$appointments=App\Http\Controllers\BookingsController::appointments($veterinarian_id); ?>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
