@@ -2,9 +2,7 @@
 @extends('main')
 
 @section('content')
-<?php
-$veterinarian_id=Auth::user()->veterinarian_id;
- ?>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
