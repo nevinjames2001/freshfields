@@ -4,8 +4,7 @@
 @section('content')
 <?php
 $veterinarian_id=Auth::user()->veterinarian_id;
-
-$appointments=App\Http\Controllers\BookingsController::appointments($veterinarian_id); ?>
+ ?>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +19,7 @@ $appointments=App\Http\Controllers\BookingsController::appointments($veterinaria
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+{{$veterinarian_id}}
 
 <body>
 </html>
