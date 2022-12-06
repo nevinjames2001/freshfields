@@ -23,30 +23,7 @@ $veterinarian_id=Auth::user()->veterinarian_id;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<table class="table table-primary">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email ID</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Reason</th>
-                    <th scope="col">Timeslot</th>
-                </tr>
-            </thead>
 
-        @foreach($appointments as $appoint)
-            <tr>
-                <td>{{$appoint['name']}}</td>
-                <td>{{$appoint['email']}}</td>
-                <td>{{$appoint['date']}}</td>
-                <td>{{$appoint['phone']}}</td>
-                <td>{{$appoint['reason']}}</td>
-                <td>{{$appoint['timeslot']}}</td>
-
-            </tr>
-        @endforeach
-</table>
 
 
 <body>
